@@ -2,8 +2,12 @@ from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework import permissions, generics, filters, pagination
 
-from posts.models import Group, Post, Comment, Follow
-from .serializers import CommentSerializer, GroupSerializer, PostSerializer, FollowSerializer
+from posts.models import Group, Post, Follow
+from .serializers import \
+    CommentSerializer, \
+    GroupSerializer, \
+    PostSerializer, \
+    FollowSerializer
 from .permissions import IsOwnerOrReadOnly
 
 
