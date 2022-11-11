@@ -3,11 +3,8 @@ from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework import permissions, generics, filters, pagination
 
 from posts.models import Group, Post, Follow
-from .serializers import \
-    CommentSerializer, \
-    GroupSerializer, \
-    PostSerializer, \
-    FollowSerializer
+from .serializers import (CommentSerializer, GroupSerializer,
+                          PostSerializer, FollowSerializer)
 from .permissions import IsOwnerOrReadOnly
 
 
@@ -29,6 +26,7 @@ class CommentViewSet(ModelViewSet):
 
     def get_queryset(self):
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
+
         return post.comments.all()
 
     def perform_create(self, serializer):
@@ -50,7 +48,7 @@ class FollowView(generics.ListCreateAPIView):
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        return Follow.objects.filter(user=self.request.user)
+        return self.request.user.follower.all()
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
