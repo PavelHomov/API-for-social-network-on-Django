@@ -30,28 +30,26 @@ cd social_network_api
 ```
 Cоздать и активировать виртуальное окружение:
 ```text
-python -m venv venv
+python3 -m venv venv
 ```
 ```text
 source venv/Scripts/activate
 ```
 Установить зависимости из файла requirements.txt:
 ```text
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 ```
 ```text
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 Выполнить миграции:
 ```text
-cd social_network_api
-```
-```text
-python manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 Запустить проект:
 ```text
-python manage.py runserver
+python3 manage.py runserver
 ```
 ## Примеры запросов к API
 ### Получение публикации
