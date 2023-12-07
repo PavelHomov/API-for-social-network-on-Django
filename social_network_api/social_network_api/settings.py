@@ -7,7 +7,10 @@ SECRET_KEY = 'hhz7l-ltdismtf@bzyz+rple7*s*w$jak%whj@(@u0eok^f9k4'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '1.0.0.127.in-addr.arpa',
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,7 +35,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'yatube_api.urls'
+ROOT_URLCONF = 'social_network_api.urls'
 
 TEMPLATES = [
     {
@@ -50,7 +53,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'yatube_api.wsgi.application'
+WSGI_APPLICATION = 'social_network_api.wsgi.application'
 
 DATABASES = {
     'default': {
