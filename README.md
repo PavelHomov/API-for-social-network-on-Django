@@ -23,10 +23,10 @@ docker run -it --rm -p 8000:8000 my-django-app
 ## Установка
 Клонировать репозиторий и перейти в него в командной строке:
 ```text
-git clone https://github.com/PavelHomov/api_final_yatube.git
+git clone git@github.com:PavelHomov/API-for-social-network-on-Django.git
 ```
 ```text
-cd api_final_yatube
+cd social_network_api
 ```
 Cоздать и активировать виртуальное окружение:
 ```text
